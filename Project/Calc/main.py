@@ -7,7 +7,8 @@
 def main():
 
     showmenu()
-    while((int_command = getint()) != 9):
+    int_command = getint()
+    while(int_command != 9):
         if int_command == 1:
             datainput()
             break
@@ -62,6 +63,30 @@ def sort():
 
 
 # showmenu()
-def shownmenu():
-    print("\n\n計算処理プログラム\n"):
+def showmenu():
+    print("\n\n計算処理プログラム\n")
+    print("処理番号を入力してください。\n")
+    print("1 データの新規入力・追加\n")
+    print("2 データの出力\n")
+    print("3 データの修正\n")
+    print("4 平均・分散・標準偏差の計算\n")
+    print("5 検索\n")
+    print("6 整列\n")
+    print(" \n")
+    print("9 終了\n")
 
+
+# getint()
+def getint():
+    int_n = input()
+    try:
+        int_n = int(int_n)
+    except ValueError:
+        print("例外処理: 数字以外が入力されました。\n")
+        int_n = -1
+    return int_n
+
+
+# 実行
+if __name__=="__main__":
+    main()
